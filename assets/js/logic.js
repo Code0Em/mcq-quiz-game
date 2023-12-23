@@ -1,0 +1,1 @@
+// **TASK 1: Create an array (of objects) containing the quiz questions, possible answers and the correct answer for each question.
