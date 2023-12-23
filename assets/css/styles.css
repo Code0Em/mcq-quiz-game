@@ -3,6 +3,10 @@ body {
   font-size: 120%;
 }
 
+h1 {
+  font-size: 2rem;
+}
+
 a {
   color: #563d7c;
   text-decoration: none;
