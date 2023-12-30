@@ -44,3 +44,75 @@ const quiz = [
         'correct': 'e1'
     },
 ]
+
+// 2 Gets references for all of the HTML elements that we need.
+const startButton = document.querySelector("#start");
+const startScreen = document.querySelector("#start-screen");
+const questions = document.querySelector("#questions");
+const theQuestion = document.querySelector("#question-title");
+const possibleAnswers = document.querySelector("#choices");
+const timeCount = document.querySelector("#time");
+
+// 2.2 Sets index of quiz array to 0.
+let quizIndex = 0;
+// 2.4 Sets total time for the quiz.
+let timeLeft = 20 * quiz.length;
+
+// 2.3 Generates the question and possible answers.
+function generateQAs(quizIndex) {
+    // Sets the text of the question and adds a number before the question.
+    theQuestion.textContent = quizIndex + 1 + ": " + quiz[quizIndex].question;
+    // ‘Erases’ previous possible answers (where applicable).
+    possibleAnswers.textContent = "";
+    // Creates buttons for all possible answers.
+    for (let answersIndex = 0; answersIndex < quiz[quizIndex].answers.length; answersIndex++) {
+        // Creates a button.
+        const answerButton = document.createElement("button");
+        // Adds event listener to button. RMDR: STILL NEED TO CREATE THIS FUNCTION
+        answerButton.addEventListener("click", checkAnswer);
+        // Sets text of the button to the possible answer.
+        answerButton.textContent = quiz[quizIndex].answers[answersIndex];
+        // Renders the button to the page, below the question text or the previous button (whichever is applicable).
+        possibleAnswers.appendChild(answerButton);
+    }
+}
+
+// 2.5 Creates quiz timer.
+function timer() {
+    const timeCountdown = setInterval(function () {
+        // Runs this codeblock when there is time left on the quiz.
+        if (timeLeft >= 1) {
+            // Displays time left on the quiz.
+            timeCount.textContent = timeLeft;
+            // Counts down the time for the quiz (one second at a time).
+            timeLeft--;
+            // Runs this codeblock when time is up.
+        } else {
+            // Displays time left (which is now zero).
+            timeCount.textContent = 0;
+            // Clears the timer.
+            clearInterval(timeCountdown);
+            //RMDR: STILL NEED TO CREATE THIS FUNCTION
+            // endQuiz()
+        }
+        // Calls this function to be run every 1000 milliseconds (i.e. one second).
+    }, 1000);
+}
+
+// 2.3 Listens for a click event on the start button and calls function.
+startButton.addEventListener("click", function () {
+    // Displays the question and possible answers.
+    questions.classList.remove("hide");
+    // Hides the start screen header, text and button.
+    startScreen.classList.add("hide");
+    // Calls the function to generate the question and possible answers.
+    generateQAs(quizIndex);
+    // Calls the function to start the quiz timer.
+    timer();
+}
+)
+
+// For build purposes only:
+function checkAnswer () {
+    console.log('working')
+}
