@@ -16,6 +16,16 @@
 
 // TASK 2.6: Add event listener for click event on start button and create corresponding function. Within the function: add the hide class to the startScreen variable, using the classList.add() method (this class is set to display: none, so when we add this class, it will hide this element). Remove the hide class from the questions variable, using the classList.remove() method (so that this element will now be displayed). Call the generateQAs function, with the parameter unchanged (this variable is currently set to 0, so the first question and answers will be displayed). Call the timer function (so that the countdown starts and the time left is displayed).
 
+// *TASK 3: Check if the user’s chosen answer is correct. If correct, add one point to their score, play a sound and display a message. If wrong, deduct 10 seconds from their remaining time, play a different sound and display a different message. Then display the next question and possible answers.
+
+// TASK 3.1: Create a variable called score and set this to 0. (This will keep count of the user’s score).
+
+// TASK: 3.2: Create two audio elements (for correct and wrong answers), using Audio() constructor. 
+
+// TASK 3.3: Create a function to check if the user’s answer is correct. (Note: this function will be called by the event listener on the possible answer buttons). Within this function: remove the hide class from the answerFeedback variable (i.e. the article tag with id of feedback) (so that this element will now be displayed). Then use an if/else statement to check the user’s answer. Set the argument as: if the text content of the ‘this’ keyword does NOT equal the third item in the object of the quiz array (i.e. the correct answer), then the user’s answer is wrong. (Note: inside the function, ‘this’ represents the button element which called the function; which is the button with the event listener on; ergo the user’s answer). Set the text of the answerFeedback variable to ‘wrong’, use the play() method to play the ‘incorrect audio’ and deduct 10 seconds from the timeLeft variable (i.e. time for the quiz). For the else argument (i.e. the user’s answer is correct, because it matches the correct answer), set the text of the answerFeedback variable to ‘correct’, use the play() method to play the ‘correct audio’ and add one to the score variable (i.e. the user’s score).
+
+// TASK 3.4: In the same function, create another function using the setInterval method (to display the next question and possible answer after a given time). Add the hide class to the addFeedback variable (so this element is now hidden). Add one to the quizIndex variable (so that this parameter is updated when the generateQAs function is next called). Add an if/else statement. Set the argument as: if the quizIndex equals the length of the quiz array, call the generateQAs function (because we are also adding one to quizIndex, this function will continue to be called until all of the objects in the quiz array have been passed through; ergo until all of the questions have been generated). For the else argument (i.e. no more questions remaining), call the endQuiz function. Clear the timer in this function.
+
 // 1 Array of objects containing quiz questions, possible answers and correct answer. RMDR: STILL NEED TO ADD COPY
 const quiz = [
     {
