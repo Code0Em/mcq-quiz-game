@@ -67,6 +67,8 @@ const theQuestion = document.querySelector("#question-title");
 const possibleAnswers = document.querySelector("#choices");
 const timeCount = document.querySelector("#time");
 const answerFeedback = document.querySelector("#feedback");
+const endScreen = document.querySelector("#end-screen");
+const finalScore = document.querySelector("#final-score");
 
 // 3.2 Creates audio elements for correct and wrong answers.
 const correctSound = new Audio("correct.wav");
@@ -114,8 +116,8 @@ function timer() {
             timeCount.textContent = 0;
             // Clears the timer.
             clearInterval(timeCountdown);
-            //RMDR: STILL NEED TO CREATE THIS FUNCTION
-            // endQuiz()
+            // Calls the function to display the end screen.
+            endQuiz()
         }
         // Calls this function to be run every 1000 milliseconds (i.e. one second).
     }, 1000);
@@ -168,10 +170,20 @@ function checkAnswer() {
             // Runs this codeblock when all of the questions have been generated.
         } else {
             console.log('working')
-            //RMDR: STILL NEED TO CREATE THIS FUNCTION
-            // endQuiz()
+            // Calls the function to display the end screen.
+            endQuiz()
         }
         // Clears the timer
         clearInterval(nextQ);
     }, 500)
+}
+
+// 4.1 Displays the end screen.
+function endQuiz() {
+    // Hides questions and possible answers.
+    questions.classList.add("hide");
+    // Displays end screen.
+    endScreen.classList.remove("hide");
+    // Displays user’s final score.
+    finalScore.textContent = score;
 }
