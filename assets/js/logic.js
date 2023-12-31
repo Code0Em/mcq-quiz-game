@@ -25,6 +25,10 @@
 
 // TASK 3.4: In the same function, create another function using the setInterval method (to display the next question and possible answer after a given time). Add the hide class to the addFeedback variable (so this element is now hidden). Add one to the quizIndex variable (so that this parameter is updated when the generateQAs function is next called). Add an if/else statement. Set the argument as: if the quizIndex equals the length of the quiz array, call the generateQAs function (because we are also adding one to quizIndex, this function will continue to be called until all of the objects in the quiz array have been passed through; ergo until all of the questions have been generated). For the else argument (i.e. no more questions remaining), call the endQuiz function. Clear the timer in this function.
 
+// *TASK 4: After the quiz time runs out or all of the questions have been answered, display the end screen with a header, the user’s final score, an input field and a submit button for the user to enter their initials.
+
+// TASK 4.1: Create a function to display the end screen. (Note: this function will be called by the timer function or the checkAnswers function). Add the hide class to the questions variable (so this element is hidden), and remove the hide class from the endScreen variable (i.e. the section tag with id of end-screen) (so that this element will be displayed). Set the text content of the finalScore variable (i.e. the span tag with id of final-score) to the score variable (so the user’s final score is displayed).
+
 // **VARIABLES**
 // 1 Array of objects containing quiz questions, possible answers and correct answer. RMDR: STILL NEED TO ADD COPY
 const quiz = [
