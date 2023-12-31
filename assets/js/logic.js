@@ -29,7 +29,23 @@
 
 // TASK 4.1: Create a function to display the end screen. (Note: this function will be called by the timer function or the checkAnswers function). Add the hide class to the questions variable (so this element is hidden), and remove the hide class from the endScreen variable (i.e. the section tag with id of end-screen) (so that this element will be displayed). Set the text content of the finalScore variable (i.e. the span tag with id of final-score) to the score variable (so the user’s final score is displayed).
 
-// **VARIABLES**
+// *TASK 5: When the user selects the submit button, validate the user’s initials to check that initials have been entered (i.e. aren’t blank) and that they don’t exceed three characters. Display error messages accordingly. Once validated, save the user’s initials and score to local storage (i.e. save data across browser sessions). Display confirmation message and hyperlink to view high scores.
+
+// TASK 5.2: Create a function to display a message underneath the input field/submit button. Set the function parameters to type and message. Create an article tag. Using the setAttribute() method, set its class to the type parameter (so that this can be set when calling the function) (e.g. ‘error’ or ‘confirm’). Set its id to sbt-msg. Set its text content to the message parameter (again, so this can be set when calling the function) (e.g. ‘do something else’ or ‘your score’s submitted’). Add this article to the end-screen variable (so the message is displayed underneath the input field and submit button).
+
+// TASK 5.3: Add an event listener for a click event on the submit button and corresponding function. Within this function, get the reference for the above article tag. Add an if statement. Set its argument to: if the submitMsg variable (i.e. article tag) is not equal to null (i.e. it exists) remove this element using the remove() method (so that any existing message is deleted).
+
+// TASK 5.4: In the same function,  create an object called user (to ‘hold’ the user’s initials and score). Set the first name to ‘initials’ and its value to userInitials.value (where useInitials equals the input tag with id of initials) (i.e. the value inputted by the user). Set the second name to ‘score’ and its value to the innerHTML of the finalScore variable (i.e. the user’s final score).
+
+// TASK 5.5: Add if/else statements to validate the user’s initials. Set argument to: if userInitials.value is equal to an empty string (i.e. user’s left initials field blank), call the displayMsg function and set the parameters to ‘error’ and ‘initials cannot be blank’ (so that the article tag is given a class of error and the above message is displayed). Set another argument to: if the length of the userInitials.value exceeds three (i.e. user’s entered initials longer than three characters), call the displayMsg function and set the parameters to ‘error’ again and another message (so again, the article tag is given a class of error and the set message is displayed).
+
+// TASK 5.6: Within the else statement codeblock (i.e. where the user’s entered initials of three characters or less), create a variable called highScores. Set this to an empty array or existing data items from local storage. To do the latter, use the getItem() method along with the JSON.parse() method. (Note: we need to use JSON.parse to ‘transform’ the JSON string back into a Javascript object). Using the push() method, add the user object (i.e. the user’s initials and score) onto the end of the highScores array (so that the user’s initial/score will be added to any existing scores; or will start a new array if none were saved). Then, using setItem() method and the JSON.stringify() method, save the updated/new highScores array to local storage (for common sense, set the key to highScores so it matches the array name). (Note: we need to use JSON.stringify to ‘convert’ the Javascript array into JSON string; this is because when we send data to a web server, the data has to be a string). 
+
+// TASK 5.7: Call the displayMsg function and set the parameters to ‘confirm’ and a message to confirm the user’s initials and score have been submitted (so the message is displayed).
+
+// TASK 5.8: Create an anchor tag. Set the innerHTML to ‘View High Scores’. Set the hyperlink to the High Scores page. Add the anchor tag to the end-screen variable (so the link is displayed beneath the confirm message).
+
+// **GLOBAL VARIABLES**
 // 1 Array of objects containing quiz questions, possible answers and correct answer. RMDR: STILL NEED TO ADD COPY
 const quiz = [
     {
@@ -175,6 +191,7 @@ function checkAnswer() {
         }
         // Clears the timer
         clearInterval(nextQ);
+        // Calls this function to be run every 500 milliseconds (i.e. half a second).
     }, 500)
 }
 
