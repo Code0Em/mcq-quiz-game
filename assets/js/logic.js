@@ -214,7 +214,6 @@ function checkAnswer() {
             generateQAs(quizIndex)
             // Runs this codeblock when all of the questions have been generated.
         } else {
-            console.log('working')
             // Calls the function to display the end screen.
             endQuiz()
         }
