@@ -48,32 +48,57 @@
 // Tasks continued on highscores.js file.
 
 // **GLOBAL VARIABLES**
-// 1 Array of objects containing quiz questions, possible answers and correct answer. RMDR: STILL NEED TO ADD COPY
+// 1 Array of objects containing quiz questions, possible answers and correct answer.
 const quiz = [
     {
-        'question': 'q1',
-        'answers': ['a1', 'a2', 'a3', 'a4'],
-        'correct': 'a1'
+        'question': 'The month of January was named after Janus, but who was he?',
+        'answers': [`(a) Julius Caesar's son.`, '(b) The Roman god of war.', '(c) The Roman god of all beginnings.', '(d) A Norse god.'],
+        'correct': '(c) The Roman god of all beginnings.',
     },
     {
-        'question': 'q2',
-        'answers': ['b1', 'b2', 'b3', 'b4'],
-        'correct': 'b1'
+        'question': `January wasn’t always the first month. Before January, which month was first?`,
+        'answers': ['(a) March.', '(b) February.', '(c) April.', '(d) August.'],
+        'correct': '(a) March.',
     },
     {
-        'question': 'q3',
-        'answers': ['c1', 'c2', 'c3', 'c4'],
-        'correct': 'c1'
+        'question': 'What is the birth flower of January?',
+        'answers': ['(a) Rose.', '(b) Carnation.', '(c) Daffodil.', '(d) Marigold.'],
+        'correct': '(b) Carnation.',
     },
     {
-        'question': 'q4',
-        'answers': ['d1', 'd2', 'd3', 'd4'],
-        'correct': 'd1'
+        'question': 'In January 2023, whose recently published book was in the news?',
+        'answers': [`(a) Elliot Page’s.`, `(b) Britney Spears’.`, `(c) Prince Harry’s.`, `(d) Dawn French’s.`],
+        'correct': `(c) Prince Harry’s.`,
     },
     {
-        'question': 'q5',
-        'answers': ['e1', 'e2', 'e3', 'e4'],
-        'correct': 'e1'
+        'question': 'What colour is the birthstone of January?',
+        'answers': ['(a) Navy Blue.', '(b) Burnt Orange.', '(c) Turquoise.', '(d) Dark Red.'],
+        'correct': '(d) Dark Red.',
+    },
+    {
+        'question': 'Apparently, lawyers have a nickname for the month of January? Can you guess what it is?',
+        'answers': ['(a) “Month of the paperwork”.', '(b) “Divorce month”.', '(c) “Jan-legal-ary”', '(d) “Tax-uary”'],
+        'correct': '(b) “Divorce month”.',
+    },
+    {
+        'question': 'Which of the following people were not born in January?',
+        'answers': ['(a) Michelle Obama.', '(b) Alicia Keys.', '(c) Oprah Winfrey.', `(d) It’s a trick question, they were all born in January.`],
+        'correct': `(d) It’s a trick question, they were all born in January.`,
+    },
+    {
+        'question': 'If you were born on 14th January, what zodiac sign would you be?',
+        'answers': ['(a) Aquarius.', '(b) Scorpio.', '(c) Leo.', '(d) Capricorn.'],
+        'correct': '(d) Capricorn.'
+    },
+    {
+        'question': 'And how about if you were born on 26th January, what zodiac sign would you be then?',
+        'answers': ['(a) Aquarius.', '(b) Scorpio.', '(c) Leo.', '(d) Capricorn.'],
+        'correct': '(a) Aquarius.'
+    },
+    {
+        'question': 'How many days are in the month of January?',
+        'answers': ['(a) Both (b) and (c) are correct.', '(b) 31.', `(c) If it’s leap year, 29.`, '(d) 30.'],
+        'correct': '(b) 31.'
     },
 ]
 
