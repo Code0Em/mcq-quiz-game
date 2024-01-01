@@ -87,12 +87,12 @@ const quiz = [
     },
     {
         'question': 'If you were born on 14th January, what zodiac sign would you be?',
-        'answers': ['(a) Aquarius.', '(b) Scorpio.', '(c) Leo.', '(d) Capricorn.'],
+        'answers': ['(a) Aquarius.', '(b) Scorpio.', '(c) Sagittarius.', '(d) Capricorn.'],
         'correct': '(d) Capricorn.'
     },
     {
         'question': 'And how about if you were born on 26th January, what zodiac sign would you be then?',
-        'answers': ['(a) Aquarius.', '(b) Scorpio.', '(c) Leo.', '(d) Capricorn.'],
+        'answers': ['(a) Aquarius.', '(b) Virgo.', '(c) Leo.', '(d) Capricorn.'],
         'correct': '(a) Aquarius.'
     },
     {
@@ -122,7 +122,7 @@ const incorrectSound = new Audio("incorrect.wav");
 // 2.2 Sets index of quiz array to zero.
 let quizIndex = 0;
 // 2.4 Sets total time for the quiz.
-let timeLeft = 20 * quiz.length;
+let timeLeft = 8 * quiz.length;
 // 3.1 Keeps count of user’s score.
 let score = 0;
 
