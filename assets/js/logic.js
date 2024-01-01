@@ -85,6 +85,8 @@ const timeCount = document.querySelector("#time");
 const answerFeedback = document.querySelector("#feedback");
 const endScreen = document.querySelector("#end-screen");
 const finalScore = document.querySelector("#final-score");
+const userInitials = document.querySelector("#initials");
+const submitButton = document.querySelector("#submit");
 
 // 3.2 Creates audio elements for correct and wrong answers.
 const correctSound = new Audio("correct.wav");
@@ -218,3 +220,48 @@ function displayMsg(type, message) {
     // Renders the message to the page, underneath the input field and submit button.
     endScreen.appendChild(submitMsg);
 }
+
+// 5.2 Listens for a click event on the submit button and calls function.
+submitButton.addEventListener("click", function () {
+    // Gets reference for ‘submit’ message (to then check if it exists).
+    const submitMsg = document.querySelector("#sbt-msg");
+    // Runs this codeblock if the ‘submit’ message already exists.
+    if (submitMsg !== null) {
+        // Removes the ‘submit’ message (where applicable).
+        submitMsg.remove()
+    }
+    // 5.3 ‘Holds’ user’s initials and score.
+    const user = {
+        initials: userInitials.value,
+        score: finalScore.innerHTML,
+    };
+    // 5.4 Validates user’s initials.
+    // Runs this codeblock if user’s left initials blank.
+    if (userInitials.value === "") {
+        // Calls function to display ‘submit’ error message.
+        displayMsg("error", "Initials cannot be blank. Please enter your initials.");
+        // Runs this codeblock if user’s initials exceed three characters.
+    } else if (userInitials.value.length > 3) {
+        // Calls function to display ‘submit’ error message.
+        displayMsg("error", "Initials must be less than three characters.");
+        // 5.5 Runs this codeblock if user’s initials are as required.
+    } else {
+        // Gets existing scores from browser (or an empty array if none are already saved).
+        const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+        // Adds user’s initials/score to existing scores (or the empty array).
+        highScores.push(user);
+        // Saves the scores (now with user’s score added) to the browser.
+        localStorage.setItem("highScores", JSON.stringify(highScores));
+        // 5.6 Calls function to display ‘submit’ confirm message
+        displayMsg("confirm", "Thanks for submitting your score!");
+        // 5.7 Creates an anchor tag (link).
+        const viewHighScores = document.createElement("a");
+        // Sets the text of the link.
+        viewHighScores.innerHTML = 'View High Scores';
+        // Sets the link to the High Scores html page.
+        viewHighScores.setAttribute('href', "./assets/pages/highscores.html");
+        // Renders the link to the page, underneath the ‘submit’ message.
+        endScreen.appendChild(viewHighScores);
+    }
+}
+)
