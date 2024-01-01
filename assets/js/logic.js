@@ -1,4 +1,4 @@
-// **TASKS**
+// **JAVASCRIPT TASKS**
 // *TASK 1: Create an array (of objects) containing the quiz questions, possible answers and the correct answer for each question.
 
 // *TASK 2: When the user selects the start button: the start page is hidden, the first question with possible answers is shown and the timer starts to countdown.
@@ -44,6 +44,8 @@
 // TASK 5.6: Call the displayMsg function and set the parameters to ‘confirm’ and a message to confirm the user’s initials and score have been submitted (so the message is displayed).
 
 // TASK 5.7: Create an anchor tag. Set the innerHTML to ‘View High Scores’. Set the hyperlink to the High Scores page. Add the anchor tag to the end-screen variable (so the link is displayed beneath the confirm message).
+
+// Tasks continued on highscores.js file.
 
 // **GLOBAL VARIABLES**
 // 1 Array of objects containing quiz questions, possible answers and correct answer. RMDR: STILL NEED TO ADD COPY
