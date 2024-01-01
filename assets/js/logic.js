@@ -122,7 +122,7 @@ const incorrectSound = new Audio("incorrect.wav");
 // 2.2 Sets index of quiz array to zero.
 let quizIndex = 0;
 // 2.4 Sets total time for the quiz.
-let timeLeft = 8 * quiz.length;
+let timeLeft = 8     * quiz.length;
 // 3.1 Keeps count of user’s score.
 let score = 0;
 
@@ -292,3 +292,32 @@ submitButton.addEventListener("click", function () {
     }
 }
 )
+
+//**CREDITS**
+// The following font has been set throughout the application:
+
+// Google Fonts (no date) Montserrat (https://fonts.google.com/specimen/Montserrat/about).
+
+// The following sources built upon the coder’s existing knowledge of the methods cited/used throughout the build:
+
+// bobbyhadz (2023) Check if a key exists in localStorage using JavaScript (https://bobbyhadz.com/blog/check-if-localstorage-key-exists-using-javascript).
+
+// byby.dev (2023) How to sort by object property in JavaScript (https://byby.dev/js-sort-by-object-property).
+
+// Codingflag (2020) Everything you need to know about JSON.stringify() and JSON.parse() (https://www.youtube.com/watch?v=OfRGJF3dT0o).
+
+// Decoding Web Development (no date) How to check if an element exists in JavaScript (https://www.decodingweb.dev/javascript-check-if-element-exists).
+
+// JS Curious (2022) Play audio with HTMLAudioElement API in JavaScript (https://jscurious.com/play-audio-with-htmlaudioelement-api-in-javascript/).
+
+// MDN Web Docs (no date) (https://developer.mozilla.org/en-US/) (numerous pages accessed).
+
+// Stack Overflow (2014) Is there a way to make numbers in an ordered list bold? (https://stackoverflow.com/questions/21369843/is-there-a-way-to-make-numbers-in-an-ordered-list-bold).
+
+// W3Schools (no date) CSS Google Fonts (https://www.w3schools.com/css/css_font_google.asp).
+
+// The following sources were used to create the quiz questions and answers:
+
+// Britannica (2023) January | Meaning & Facts (https://www.britannica.com/topic/January).
+
+// Medium (2023) 14 Fun Facts About January. New Year, New You. Are we right? (https://medium.com/@drakewenston900/14-fun-facts-about-january-d95d8903945c).
