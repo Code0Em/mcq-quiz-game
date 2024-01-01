@@ -18,3 +18,46 @@
 // TASK 6.7: Call the showScores function (so all of the saved scores and initials are displayed, from highest to lowest).
 
 // TASK 6.8: Add the onclick attribute to the clear button. (Note: this is instead of an event listener, as used on the other buttons in this application). Within the corresponding function, use the clear() method to clear the local storage (i.e. deletes existing scores from the browser). Also set the text of the scoresList variable to an empty screen (so the existing scores are no longer displayed).
+
+// **GLOBAL VARIABLES**
+// 6.2 Gets references for all of the HTML elements that we need.
+const scoresList = document.getElementById("highscores");
+const clearButton = document.getElementById("clear");
+
+// 6.3 Gets existing scores from browser.
+const highScores = JSON.parse(localStorage.getItem("highScores"))
+
+// **FUNCTIONS AND EVENT LISTENERS**
+// 6.4 Compares existing scores (so they can be sorted numerically).
+function compareByScore(a, b) {
+    return b.score - a.score;
+}
+
+// 6.5 Displays all existing scores and initials.
+function showScores() {
+    // Runs this codeblock if there are existing scores saved to the browser.
+    if (highScores !== null) {
+        // Calls function which sorts the existing scores from highest to lowest.
+        highScores.sort(compareByScore);
+        // 6.6 Creates list items for all of the existing scores.
+        for (highScoresIndex = 0; highScoresIndex < highScores.length; highScoresIndex++) {
+            // Creates a list item.
+            const scoresLi = document.createElement("li")
+            // Sets text of the list item to user’s initials and score.
+            scoresLi.textContent = "Initials: " + highScores[highScoresIndex].initials + ", Points: " + highScores[highScoresIndex].score;
+            // Renders the list item to the page, below the high scores header or the previous list item (whichever is applicable).
+            scoresList.appendChild(scoresLi);
+        }
+    }
+}
+
+// 6.7 Calls the function to display all existing scores and initials.
+showScores()
+
+// 6.8 Runs this codeblock when the user selects the clear button.
+clearButton.onclick = function () {
+    // Clears the existing scores.
+    localStorage.clear();
+    // No longer displays the existing scores on the page.
+    scoresList.textContent = "";
+};
