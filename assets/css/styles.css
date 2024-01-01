@@ -31,6 +31,8 @@ button {
   /*Sets font of buttons to Google font*/
   font-family:'Montserrat', sans-serif;
   font-size: 100%;
+  /*Sets text of buttons to left align (looks cleaner on smaller screens)*/
+  text-align: left;
   /*Changes background colour of buttons*/
   background-color: #085a28;
   border-radius: 5px;
