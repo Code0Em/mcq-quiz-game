@@ -20,7 +20,7 @@ The project specified that the application should run in the browser and include
 
 The project criteria further specified that the quiz should include a start button (which generates the first question and set of answers and starts a timer), answers buttons for each question (which generate the next question and set of answers) and that when an incorrect answer is selected, 10 seconds should be deducted from the quiz timer.
 
-When all of the questions are answered (or when the timer reaches 0), the project criteria stated that the user’s score should be displayed and the user should have the ability to save their initials and their score.
+When all of the questions are answered (or when the timer reaches zero), the project criteria stated that the user’s score should be displayed and the user should have the ability to save their initials and their score.
 
 ## Build
 
@@ -36,7 +36,7 @@ N/A
 
 ## Usage
 
-Users navigate to the webpage via the URL ([January Quiz](ADD LINK WHEN DEPLOYED). When on the start page, the title of the quiz and an explanation of how to play the quiz is displayed. A timer (defaulted to zero) is displayed in the top right of the page, while a link to the High Scores webpage is located in the top left of the page. A button to start the quiz is positioned below the quiz title and explanation.
+Users navigate to the webpage via the URL ([January Quiz](https://code0em.github.io/mcq-quiz-game/)). When on the start page, the title of the quiz and an explanation of how to play the quiz is displayed. A timer (defaulted to zero) is displayed in the top right of the page, while a link to the High Scores webpage is located in the top left of the page. A button to start the quiz is positioned below the quiz title and explanation.
 
 Upon selecting the start button, the quiz timer starts and the user is presented with the first question and four possible answer buttons. If an incorrect answer is selected, an ‘incorrect’ sound is played and a ‘wrong’ message is displayed. The timer in the top right of the page is also decreased by 10 seconds. If a correct answer is selected, a ‘correct’ sound is played and a ‘correct’ message is displayed. One point is also added to the user’s score (but this is not displayed). Half a second after selecting an answer button, the next question and four possible answer buttons are displayed on the page.
 
